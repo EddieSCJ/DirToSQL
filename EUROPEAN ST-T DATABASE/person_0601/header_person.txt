@@ -1,0 +1,7 @@
+person:0601
+age:55
+sex:m
+date:not_informed
+medicament:diltiazem
+diagnosis:coronary artery disease
+variation: true

@@ -1,0 +1,7 @@
+person:0105
+age:65
+sex:m
+date:not_informed
+medicament: verapmil
+diagnosis: Inferior myocardial infarction
+variation: true

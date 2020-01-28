@@ -1,0 +1,7 @@
+person:0114
+age:60
+sex:m
+date:not_informed
+medicament:nitrates, verapmil
+diagnosis: arterial hypertension
+variation: true

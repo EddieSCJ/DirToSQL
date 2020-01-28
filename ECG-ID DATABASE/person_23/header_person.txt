@@ -1,0 +1,6 @@
+person:23
+age:25
+sex:m
+date:26.04.2005
+medicament: not_informed
+diagnosis: not_informed

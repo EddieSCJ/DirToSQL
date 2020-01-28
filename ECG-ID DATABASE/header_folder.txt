@@ -1,0 +1,9 @@
+records:not_informed
+people:90
+men_quant:44
+women_quant:46
+min_age:13
+max_age:75
+filtered:true
+not_filtered:true
+variation:false

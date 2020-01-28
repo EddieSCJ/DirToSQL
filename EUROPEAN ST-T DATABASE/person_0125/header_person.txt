@@ -1,0 +1,7 @@
+person:0125
+age:58
+sex:m
+date:not_informed
+medicament:nitrates, diltiazem
+diagnosis: anterior myocardial infarction
+variation: true

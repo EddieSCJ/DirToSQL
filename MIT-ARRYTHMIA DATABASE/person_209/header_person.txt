@@ -1,0 +1,7 @@
+person:209
+age:not_informed
+sex:m
+date:not_informed
+medicament:aldomet, hydrodiuril, inderal
+diagnosis:arrythmia
+variation:true

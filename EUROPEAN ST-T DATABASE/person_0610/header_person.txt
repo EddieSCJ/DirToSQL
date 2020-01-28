@@ -1,0 +1,7 @@
+person:0610
+age:65
+sex:m
+date:not_informed
+medicament:not_informed
+diagnosis:effort angina, non-q myocardial infarction
+variation: true

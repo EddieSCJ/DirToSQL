@@ -1,0 +1,7 @@
+person:0603
+age:61
+sex:m
+date:not_informed
+medicament:digitalis, nitrates
+diagnosis:arterial hypertensions
+variation: true

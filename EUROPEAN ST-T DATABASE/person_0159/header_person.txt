@@ -1,0 +1,7 @@
+person:0159
+age:62
+sex:m
+date:not_informed
+medicament:diltiazem, nitrates
+diagnosis: inferior myocardial infarction
+variation: true

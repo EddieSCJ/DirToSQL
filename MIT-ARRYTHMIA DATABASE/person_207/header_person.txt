@@ -1,0 +1,7 @@
+person:207
+age:not_informed
+sex:m
+date:not_informed
+medicament:digoxin, quinaglute
+diagnosis:arrythmia
+variation:true

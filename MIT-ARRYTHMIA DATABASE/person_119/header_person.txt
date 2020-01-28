@@ -1,0 +1,7 @@
+person:119
+age:not_informed
+sex:m
+date:not_informed
+medicament:pronestyl
+diagnosis:arrythmia
+variation:true

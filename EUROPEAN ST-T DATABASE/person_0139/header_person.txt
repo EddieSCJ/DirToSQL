@@ -1,0 +1,7 @@
+person:0139
+age:47
+sex:m
+date:not_informed
+medicament:nitrates, diltiazem
+diagnosis: not_informed
+variation: true

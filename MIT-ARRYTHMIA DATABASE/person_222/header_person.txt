@@ -1,0 +1,7 @@
+person:222
+age:not_informed
+sex:f
+date:not_informed
+medicament:digoxin, quinidine
+diagnosis:arrythmia
+variation:true

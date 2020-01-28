@@ -1,0 +1,7 @@
+person:0602
+age:51
+sex:m
+date:not_informed
+medicament:digitalis, nitrates
+diagnosis:coronary artery disease, myocardial infarction
+variation: true

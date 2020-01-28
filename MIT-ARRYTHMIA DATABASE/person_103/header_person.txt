@@ -1,0 +1,7 @@
+person:103
+age:not_informed
+sex:m
+date:not_informed
+medicament: diapres, xyloprim
+diagnosis: arrythmia
+variation: true

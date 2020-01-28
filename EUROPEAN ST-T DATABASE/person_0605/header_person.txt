@@ -1,0 +1,7 @@
+person:0605
+age:48
+sex:m
+date:not_informed
+medicament:not_informed
+diagnosis:effort angina, anterior myocardial infarction
+variation: true

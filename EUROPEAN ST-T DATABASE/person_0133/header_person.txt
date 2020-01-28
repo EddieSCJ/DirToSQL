@@ -1,0 +1,7 @@
+person:0133
+age:48
+sex:m
+date:not_informed
+medicament:nitrates, nifedipine
+diagnosis: not_informed
+variation: true

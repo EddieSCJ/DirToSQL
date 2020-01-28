@@ -1,0 +1,7 @@
+person:105
+age:not_informed
+sex:f
+date:not_informed
+medicament: digoxin, nitropaste, pronestyl
+diagnosis: arrythmia
+variation: true

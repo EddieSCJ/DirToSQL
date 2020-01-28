@@ -1,0 +1,7 @@
+person:0704
+age:57
+sex:m
+date:not_informed
+medicament:not_informed
+diagnosis:coronary artery disease
+variation: true

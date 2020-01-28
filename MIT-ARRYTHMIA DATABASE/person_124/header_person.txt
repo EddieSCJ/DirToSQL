@@ -1,0 +1,7 @@
+person:124
+age:not_informed
+sex:m
+date:not_informed
+medicament:digoxin, isordil, quinidine
+diagnosis:arrythmia
+variation:true

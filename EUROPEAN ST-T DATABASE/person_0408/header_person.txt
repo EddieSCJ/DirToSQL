@@ -1,0 +1,7 @@
+person:0408
+age:37
+sex:m
+date:not_informed
+medicament:nifedipine, beta-blockers
+diagnosis:not_informed
+variation: true

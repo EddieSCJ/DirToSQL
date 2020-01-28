@@ -1,0 +1,7 @@
+person:0509
+age:34
+sex:m
+date:not_informed
+medicament:verapmil
+diagnosis:myocardial infarction
+variation: true

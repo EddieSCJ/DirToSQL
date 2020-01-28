@@ -1,0 +1,7 @@
+person:0162
+age:66
+sex:m
+date:not_informed
+medicament:not_informed
+diagnosis: arterial hypertension
+variation: true

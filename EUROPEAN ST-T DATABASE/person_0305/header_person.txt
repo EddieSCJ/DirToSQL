@@ -1,0 +1,7 @@
+person:0305
+age:60
+sex:m
+date:not_informed
+medicament:nifedipine
+diagnosis: inferior myocardial infarction
+variation: true

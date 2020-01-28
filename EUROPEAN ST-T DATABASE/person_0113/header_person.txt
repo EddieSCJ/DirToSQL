@@ -1,0 +1,7 @@
+person:0113
+age:55
+sex:m
+date:not_informed
+medicament:nitrates, verapmil
+diagnosis: not_informed
+variation: true

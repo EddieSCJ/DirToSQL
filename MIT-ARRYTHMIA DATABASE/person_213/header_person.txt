@@ -1,0 +1,7 @@
+person:213
+age:not_informed
+sex:m
+date:not_informed
+medicament:digoxin
+diagnosis:arrythmia
+variation:true
