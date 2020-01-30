@@ -1,7 +1,0 @@
-person:0304
-age:55
-sex:m
-date:not_informed
-medicament:not_informed
-diagnosis: myocardial infarction
-variation: true

@@ -1,7 +1,0 @@
-person:0409
-age:71
-sex:m
-date:not_informed
-medicament:nifedipine, beta-blockers, nitrates
-diagnosis:myocardial infarction
-variation: true

@@ -1,7 +1,0 @@
-person:0119
-age:51
-sex:m
-date:not_informed
-medicament:nitrates, nifedipine, diltiazem
-diagnosis: normal coronary arteries
-variation: true

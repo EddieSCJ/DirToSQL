@@ -1,7 +1,0 @@
-person:0801
-age:62
-sex:f
-date:not_informed
-medicament:nifedipine, beta-blockers
-diagnosis:coronary artery disease
-variation: true

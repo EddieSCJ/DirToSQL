@@ -1,7 +1,0 @@
-person:221
-age:not_informed
-sex:m
-date:not_informed
-medicament:Hydrochlorthiazide, lasix
-diagnosis:arrythmia
-variation:true

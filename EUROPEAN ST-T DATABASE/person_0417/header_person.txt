@@ -1,7 +1,0 @@
-person:0417
-age:84
-sex:m
-date:not_informed
-medicament:diltiazem, molsidomine
-diagnosis:not_informed
-variation: true

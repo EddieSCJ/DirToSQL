@@ -1,7 +1,0 @@
-person:106
-age:not_informed
-sex:f
-date:not_informed
-medicament:inderal
-diagnosis:arrythmia
-variation:true

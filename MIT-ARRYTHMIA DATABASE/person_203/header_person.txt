@@ -1,7 +1,0 @@
-person:203
-age:not_informed
-sex:m
-date:not_informed
-medicament:coumadin, digoxin, heparin, hygroton, lasix
-diagnosis:arrythmia
-variation:true

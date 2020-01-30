@@ -1,7 +1,0 @@
-person:0116
-age:47
-sex:m
-date:not_informed
-medicament:nitrates, verapmil
-diagnosis: normal coronary arteries
-variation: true

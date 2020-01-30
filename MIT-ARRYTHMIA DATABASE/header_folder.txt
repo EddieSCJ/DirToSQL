@@ -1,8 +1,0 @@
-records:not_informed
-people:not-informed
-men_quant:not_informed
-women_quant:not_informed
-min_age:not_informed
-max_age:not_informed
-filtered:true
-not_filtered:false

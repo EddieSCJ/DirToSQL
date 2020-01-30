@@ -84,7 +84,6 @@ function migrate_paths_to_sql()
         while ($pasta_1 = $diretorio_1->read()) {
             if ($pasta_1 != "." and $pasta_1 != ".." and $pasta_1 != "header_folder.txt") {
                 $diretorio_2 = dir($diretorio_inicial . "/" . $pasta_1);
-//                echo "$pasta_1 <br>";
                 while ($pasta_2 = $diretorio_2->read()) {
                     if ($pasta_2 != "." and $pasta_2 != ".." and $pasta_2 != "header_person.txt") {
                         // echo "----------$pasta_2 <br>";

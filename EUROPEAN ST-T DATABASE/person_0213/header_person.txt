@@ -1,7 +1,0 @@
-person:0213
-age:56
-sex:f
-date:not_informed
-medicament:not_informed
-diagnosis: not_informed
-variation: true

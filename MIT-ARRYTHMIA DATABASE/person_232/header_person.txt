@@ -1,7 +1,0 @@
-person:232
-age:not_informed
-sex:f
-date:not_informed
-medicament:aldomet, inderal
-diagnosis:arrythmia
-variation:true

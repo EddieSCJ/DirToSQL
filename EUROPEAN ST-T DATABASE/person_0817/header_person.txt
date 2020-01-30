@@ -1,7 +1,0 @@
-person:0817
-age:55
-sex:f
-date:not_informed
-medicament:not_informed
-diagnosis: coronary artery disease
-variation: true

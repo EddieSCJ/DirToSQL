@@ -1,7 +1,0 @@
-person:201
-age:not_informed
-sex:m
-date:not_informed
-medicament:digoxin, hydrochlorthiazide, inderal, kcl
-diagnosis:arrythmia
-variation:true

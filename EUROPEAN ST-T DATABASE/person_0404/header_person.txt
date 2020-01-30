@@ -1,7 +1,0 @@
-person:0404
-age:54
-sex:m
-date:not_informed
-medicament:nifedipine
-diagnosis:not_informed
-variation: true

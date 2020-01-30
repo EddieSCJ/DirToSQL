@@ -1,7 +1,0 @@
-person:121
-age:not_informed
-sex:f
-date:not_informed
-medicament:digoxin, isordil, nitropaste
-diagnosis:arrythmia
-variation:true

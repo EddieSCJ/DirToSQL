@@ -1,7 +1,0 @@
-person:0515
-age:34
-sex:m
-date:not_informed
-medicament:nitrates
-diagnosis:not_informed
-variation: true

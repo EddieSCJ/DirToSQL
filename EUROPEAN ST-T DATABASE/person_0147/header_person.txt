@@ -1,7 +1,0 @@
-person:0147
-age:35
-sex:m
-date:not_informed
-medicament:nifedipine, nitrates, beta-blockers
-diagnosis: not_informed
-variation: true

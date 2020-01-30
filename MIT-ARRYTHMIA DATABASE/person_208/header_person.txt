@@ -1,7 +1,0 @@
-person:208
-age:not_informed
-sex:f
-date:not_informed
-medicament:not_informed
-diagnosis:arrythmia
-variation:true

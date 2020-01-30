@@ -1,7 +1,0 @@
-person:0607
-age:70
-sex:f
-date:not_informed
-medicament:nitrates, verapmil
-diagnosis:infero-lateral myocardial infarction
-variation: true

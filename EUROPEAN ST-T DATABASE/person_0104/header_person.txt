@@ -1,7 +1,0 @@
-person:0104
-age:47
-sex:m
-date:not_informed
-medicament: nitrates, verapmil
-diagnosis: Inferior myocardial infarction
-variation: true

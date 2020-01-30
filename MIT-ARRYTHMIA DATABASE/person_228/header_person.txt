@@ -1,7 +1,0 @@
-person:228
-age:not_informed
-sex:f
-date:not_informed
-medicament:digoxin, norpace
-diagnosis:arrythmia
-variation:true

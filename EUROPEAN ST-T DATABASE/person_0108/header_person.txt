@@ -1,7 +1,0 @@
-person:0108
-age:46
-sex:m
-date:not_informed
-medicament: nitrates, verapmil
-diagnosis: Anterior myocardial infarction
-variation: true

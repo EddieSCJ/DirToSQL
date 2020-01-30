@@ -1,7 +1,0 @@
-person:0166
-age:not_informed
-sex:not_informed
-date:not_informed
-medicament:not_informed
-diagnosis: myocardial infarction
-variation: true

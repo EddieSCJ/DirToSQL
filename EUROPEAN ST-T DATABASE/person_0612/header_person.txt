@@ -1,7 +1,0 @@
-person:0612
-age:64
-sex:m
-date:not_informed
-medicament:not_informed
-diagnosis:coronary artery disease
-variation: true

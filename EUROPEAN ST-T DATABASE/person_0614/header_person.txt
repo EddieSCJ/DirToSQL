@@ -1,7 +1,0 @@
-person:0614
-age:73
-sex:m
-date:not_informed
-medicament:not_informed
-diagnosis:hypotensive cardiomyophathy
-variation: true

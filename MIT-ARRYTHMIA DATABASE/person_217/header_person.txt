@@ -1,7 +1,0 @@
-person:217
-age:not_informed
-sex:m
-date:not_informed
-medicament:digoxin, lasix, quinidine
-diagnosis:arrythmia
-variation:true

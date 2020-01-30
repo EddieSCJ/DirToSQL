@@ -1,7 +1,0 @@
-person:0606
-age:30
-sex:m
-date:not_informed
-medicament:nifedipine
-diagnosis:myocardial infarction
-variation: true

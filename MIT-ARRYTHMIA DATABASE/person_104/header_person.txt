@@ -1,7 +1,0 @@
-person:104
-age:not_informed
-sex:f
-date:not_informed
-medicament: digoxin, pronestyl
-diagnosis: arrythmia
-variation: true

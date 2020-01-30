@@ -1,6 +1,0 @@
-person:01
-age:25
-sex:m
-date:07.12.2004
-medicament: not_informed
-diagnosis: not_informed
