@@ -127,7 +127,7 @@ function runMITADB()
 function runEUSTDB()
 {
     
-    for ($i = 103; $i <= 103; $i++) {
+    for ($i = 103; $i <= 1305; $i++) {
         $num = $i;
         if ($num < 1000) {
             $num = 0 . $num;

@@ -2,16 +2,38 @@
 
 namespace archive;
 
-function header($file, $person, $folder){
+function header($file, $folder, $person, $filtered, $arc_name)
+{
+    $dir = $folder . "/" . $person . "/" . $filtered;
+
+    $person = explode("_", $person);
+    $person = (int) $person[1];
+
     $dados["per_id"] = selectPersonID($person, "$folder");
+    $dados["arc_name"] = $arc_name;
+    $dados["filtered"] = $filtered == "filtered" or $filtered == "FILTERED" ? true : false;
+
+    $arc_json_name = explode(".", $arc_name);
+    $arc_json_name = $arc_json_name[0];
+
+    $dados["content"] = CSVToJsonArc($file, $dir, $arc_json_name);
+    // print_r($dados["content"]);
+
+    return $dados;
 }
 
-function CSVToJsonArc($file)
+function CSVToJsonArc($file, $dir, $arc_name)
 {
+
     $arquivo = fopen($file, 'r');
     $dados = runArchiveArc($arquivo);
     fclose($arquivo);
-    return json_encode($dados);
+
+    $arquivoJSON = fopen("$dir" . "/" . "$arc_name" . ".json", 'a+');
+    $json = json_encode($dados);
+    fwrite($arquivoJSON, $json);
+    fclose($arquivoJSON);
+    return $dados;
 }
 
 function transformArc($chave_valor)
@@ -32,44 +54,42 @@ function runArchiveArc($arquivo)
 {
     $counter = 0;
     while (!feof($arquivo)) {
-        $linha =  fgetArc($arquivo, 0);
+        $linha =  fgetcsv($arquivo, 0);
         $counter++;
 
-         if ($counter > 2) {
-            if(isset($linha[0])){
+        if ($counter > 2) {
+            if (isset($linha[0])) {
                 $linha = transformArc($linha);
                 $dados["$linha[0]"] = $linha[1];
-    
             }
-            
-          }
+        }
     }
     return $dados;
 }
 
-function insert($file, $person)
+function insert($file, $folder, $person, $filtered, $arc_name)
 {
-
     require_once("conexao.php");
     $conexao = novaConexao("postgres");
 
-    $json = CSVToJsonArc($file, $person, $folder);
-    $sql = "INSERT INTO header_person
-    (person, age, sex, date, medicament, diagnosis, database_id)
+    $dados = header($file, $folder, $person, $filtered, $arc_name);
+
+    $sql = "INSERT INTO header_archive
+    (arc_name, filtered, per_id)
     VALUES (
-        ?, ?, ?, ?, ?, ?, ?
+        ?, ?, ?
     );";
 
     $stmt = $conexao->prepare($sql);
-    $stmt->execute([
-        $json['person'],
-        $json['age'],
-        $json['sex'],
-        $json['date'],
-        $json['medicament'],
-        $json['diagnosis'],
-        $json['header_database_id']
-    ]);
+    if (!$stmt->execute([
+        $dados['arc_name'],
+        $dados['filtered'] == "" ? "false" : "true",
+        $dados['per_id']
+    ])) {
+        print_r($stmt->errorInfo());
+        echo "<br> ". $file;
+        die("fodeu-se baixinho");
+    }
 
     $conexao = null;
 }
@@ -106,65 +126,55 @@ function selectPersonID($person, $folder)
     $conexao = null;
     return $id['per_id'];
 }
-
-function runECGIDDB($filter)
+function enviar($arc){
+    $file = explode(".", $arc);
+    if($file[1] == "json"){
+        return false;
+    }
+    else {
+        return true;
+    }
+}
+function runECGIDDB()
 {
-    $diretorio_inicial = "ECG-ID DATABASE";
-    $diretorio_person = "/person_";
+    //ESCOLHE A DATABASE PFVR PQ O FOREACH DEU MO ERRO TIO
+    $diretorio_inicial = "EUROPEAN ST-T DATABASE";
 
-    $diretorio_1 = dir($diretorio_inicial);
+        $diretorio_1 = dir($diretorio_inicial);
+        echo $diretorio_inicial;
+        while ($pasta_1 = $diretorio_1->read()) {
 
-    while($pasta_1 = $diretorio_1->read()){
-            if($pasta_1 != "." and $pasta_1 != ".." and $pasta_1 != "header_folder.txt"){
-                echo $pasta_1 . "<br>";
+            if ($pasta_1 != "." and $pasta_1 != ".." and $pasta_1 != "header_folder.txt") {
+                $diretorio_2 = dir($diretorio_inicial . "/" . $pasta_1);
+    
+                while ($pasta_2 = $diretorio_2->read()) {
+                    if ($pasta_2 != "." and $pasta_2 != ".." and $pasta_2 != "header_person.txt") {
+                        $diretorio_3 = dir($diretorio_inicial . "/" .
+                            $pasta_1 . "/" . $pasta_2);
+    
+                        while ($arquivo = $diretorio_3->read()) {
+                            if ($arquivo != "." and $arquivo != ".." and enviar($arquivo)) {
+                                $file = $diretorio_inicial . "/" . $pasta_1 . "/" . $pasta_2 . "/" . $arquivo;
+                                insert($file, $diretorio_inicial, $pasta_1, $pasta_2, $arquivo);
+    
+                            }
+                        }
+                    }
+                }
             }
-    }
-    // for ($i = 1; $i <= 1; $i++) {
-    //     $num = $i;
-    //     if ($num < 10) {
-    //         $num = 0 . $num;
-    //     }
-    //     if (is_dir($folder . $person . "$num")) {
-
-    //         $diretorio = dir($folder . $person . "$num" ."/" . $filter); 
-    //         //while(
-    //         $arquivo = $diretorio -> read();
-    //         $arquivo = $diretorio -> read();
-           
-    //         echo $arquivo;
-            //){
-
-            //}
-            
-
-                    // $record = CSVToJsonArc($folder . 
-                    // $person . "$num" .
-                    // "/" . "$filter" . 
-                    // "/" . $arquivo,
-                    // "person_$i", 
-                    // "ECG-ID DATABASE");
-                    // print_r($record);
-
-                    
-            //}
-            // insert(
-            //     "ECG-ID DATABASE" . "/person_" . $num . "/header_person.CSV",
-            //     "ECG-ID DATABASE"
-            // );
-            // echo "Pessoa $num" . "adicionada com sucesso <br> ";
-    //     }
-    // }
-
+        }
+    
+ 
 }
 
 
 
-function lendoDir(){
+function lendoDir()
+{
     $path = "ECG-ID DATABASE" . "/person_" . "01" .
-    "/" . "filtered/"; 
-    $diretorio = dir($path); 
-    while($arquivo = $diretorio -> read()){
-        echo "<a href='".$path.$arquivo."'>".$arquivo."</a><br />";
+        "/" . "filtered/";
+    $diretorio = dir($path);
+    while ($arquivo = $diretorio->read()) {
+        echo "<a href='" . $path . $arquivo . "'>" . $arquivo . "</a><br />";
     }
 }
-
