@@ -6,4 +6,3 @@ min_age:not_informed
 max_age:not_informed
 filtered:true
 not_filtered:false
-variation:true
