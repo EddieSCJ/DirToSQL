@@ -3,9 +3,9 @@
 namespace archive;
 
 function header($file, $folder, $person, $filtered, $arc_name)
-{    
+{
     $dir = $folder . "/" . $person . "/" . $filtered;
-    CSVToJsonArc($file, $dir, $arc_name);
+    //CSVToJsonArc($file, $dir, $arc_name);
 
     $person = explode("_", $person);
     $person = (int) $person[1];
@@ -18,7 +18,6 @@ function header($file, $folder, $person, $filtered, $arc_name)
 
 function CSVToJsonArc($file, $dir, $arc_name)
 {
-    echo $file;
     $arquivo = fopen($file, 'r');
     $dados = runArchiveArc($arquivo);
     fclose($arquivo);
@@ -27,6 +26,7 @@ function CSVToJsonArc($file, $dir, $arc_name)
     $json = json_encode($dados);
     fwrite($arquivoJSON, $json);
     fclose($arquivoJSON);
+    return $dados;
 }
 
 function transformArc($chave_valor)
@@ -57,7 +57,7 @@ function insert($file, $folder, $person, $filtered, $arc_name)
     $conexao = novaConexao("postgres");
 
     $dados = header($file, $folder, $person, $filtered, $arc_name);
-    
+
     $sql = "INSERT INTO header_archive
     (arc_name, filtered, per_id)
     VALUES (
@@ -122,32 +122,35 @@ function enviar($arc)
 function runECGIDDB()
 {
     $diretorios = array("MIT-ARRYTHMIA DATABASE", "EUROPEAN ST-T DATABASE", "ECG-ID DATABASE");
-        foreach ($diretorios as $diretorio_inicial) {
-            $diretorio_1 = dir($diretorio_inicial);
-        
-            while ($pasta_1 = $diretorio_1->read()) {
-                if ($pasta_1 != "." and $pasta_1 != ".." and $pasta_1 != "header_folder.txt") {
-                    $diretorio_2 = dir($diretorio_inicial . "/" . $pasta_1);
-                   
-                    while ($pasta_2 = $diretorio_2->read()) {
-                        if ($pasta_2 != "." and $pasta_2 != ".." and $pasta_2 != "header_person.txt") {
-                            
-                            $diretorio_3 = dir($diretorio_inicial . "/" .
-                                $pasta_1 . "/" . $pasta_2);
-    
-                            while ($arquivo = $diretorio_3->read()) {
-                                if ($arquivo != "." and $arquivo != "..") {
-                                    $file = $diretorio_inicial . "/" . $pasta_1 . "/" . $pasta_2 . "/" . $arquivo;
-                                    $arquivo = explode(".", $arquivo);
-                                    $arquivo = $arquivo[0];
-                                    insert($file, $diretorio_inicial, $pasta_1, $pasta_2, $arquivo);
-                                }
+
+    foreach ($diretorios as $diretorio_inicial) {
+        $diretorio_1 = dir($diretorio_inicial);
+
+        while ($pasta_1 = $diretorio_1->read()) {
+            if ($pasta_1 != "." and $pasta_1 != ".." and $pasta_1 != "header_folder.txt") {
+                $diretorio_2 = dir($diretorio_inicial . "/" . $pasta_1);
+
+                while ($pasta_2 = $diretorio_2->read()) {
+                    if ($pasta_2 != "." and $pasta_2 != ".." and $pasta_2 != "header_person.txt") {
+
+                        $diretorio_3 = dir($diretorio_inicial . "/" .
+                            $pasta_1 . "/" . $pasta_2);
+
+                        while ($arquivo = $diretorio_3->read()) {
+                            if ($arquivo != "." and $arquivo != "..") {
+                                $file = $diretorio_inicial . "/" . $pasta_1 . "/" . $pasta_2 . "/" . $arquivo;
+                                $arquivo = explode(".", $arquivo);
+                                $arquivo = $arquivo[0] . "." . $arquivo[1];
+                                $dir = $diretorio_inicial . "/" . $pasta_1 . "/" . $pasta_2;
+                                CSVToJsonArc($file, $dir, $arquivo);
+                                //insert($file, $diretorio_inicial, $pasta_1, $pasta_2, $arquivo);
                             }
                         }
                     }
                 }
             }
         }
+    }
 }
 
 

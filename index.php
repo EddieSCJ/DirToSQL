@@ -9,7 +9,7 @@ const SRC = array("MIT-ARRYTHMIA DATABASE", "EUROPEAN ST-T DATABASE", "ECG-ID DA
 
 // archive\runECGIDDB("filtered");
 
-archive\runECGIDDB();
+data\migrate_paths_to_sql();
 
 
 ?>
